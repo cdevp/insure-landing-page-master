@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
 		"watch-style": "sass --watch style.scss style.css",
-		"watch-js": "tsc --watch script.ts"
+		"watch-js": "tsc --watch script.ts",
+		"build": "concurrently \"npm run watch-style\" \"npm run watch-js\""
   },
   "repository": {
     "type": "git",

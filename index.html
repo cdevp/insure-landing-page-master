@@ -16,6 +16,7 @@
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
+  <script src="script.js" defer></script>
 </head>
 <body>
   <div id="content">
@@ -24,14 +25,21 @@
     <div id="box-1">
       <div id="header-bar">
         <img id="header-logo" src="images/logo.svg" alt="Insure logo">
+        <div id="mobile-menu" tabindex="1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><g class="menu-svg-lines" fill="none" fill-rule="evenodd"><path class="menu-svg-lines" fill="#FFF" stroke="#2C2830" stroke-width="1.5" d="M.75.75h30.5v30.5H.75z"/><g class="menu-svg-lines" fill="#2C2830"><path d="M8 10h16v1.5H8zM8 15h16v1.5H8zM8 20h16v1.5H8z"/></g></g></svg>
+        </div>
+        <div id="mobile-x-menu" tabindex="2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><g fill="none" fill-rule="evenodd"><path fill="#FFF" stroke="#2C2830" stroke-width="1.5" d="M.75.75h30.5v30.5H.75z"/><g fill="#2C2830"><path d="M10.873 9.563l11.314 11.314-1.06 1.06L9.813 10.623z"/><path d="M9.813 20.877L21.127 9.563l1.06 1.06-11.314 11.314z"/></g></g></svg>
+        </div>
         <div id="header-menu-list">
           <span class="header-menu-item">How we work</span>
           <span class="header-menu-item">Blog</span>
           <span class="header-menu-item">Account</span>
-          <span class="header-menu-button">View plans</span>
-        </div>
-        <div id="mobile-menu">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><g class="menu-svg-lines" fill="none" fill-rule="evenodd"><path class="menu-svg-lines" fill="#FFF" stroke="#2C2830" stroke-width="1.5" d="M.75.75h30.5v30.5H.75z"/><g class="menu-svg-lines" fill="#2C2830"><path d="M8 10h16v1.5H8zM8 15h16v1.5H8zM8 20h16v1.5H8z"/></g></g></svg>
+          <span class="header-menu-button">
+            <span class="header-menu-button-text">
+              View plans
+            </span>
+          </span>
         </div>
       </div>
     </div>
@@ -50,9 +58,9 @@
         <div id="content-plans">
           <span id="plan-text">View plans</span>
         </div>
+        <img id="desktop-photo" src="images/image-intro-desktop.jpg" alt="photo of two adults and two kids holding hands">
         <img id="mobile-bg-box-2-left" src="images/bg-pattern-intro-left-mobile.svg" alt="topography contour pattern background image">
       </div>
-      <img id="desktop-photo" src="images/image-intro-desktop.jpg" alt="photo of two adults and two kids holding hands">
 <!--      <img id="mobile-photo" src="images/image-intro-mobile.jpg" alt="photo of two adults and two kids holding hands">-->
       <img id="mobile-bg-box-2-right" src="images/bg-pattern-intro-right-mobile.svg" alt="topography contour pattern backgronud image">
       <div id="mobile-photo"></div>

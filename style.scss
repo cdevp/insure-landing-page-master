@@ -41,15 +41,17 @@ html, body {
     }
 }
 
-@media (min-width: 1001px) {
+@media (min-width: 500px) {
 
     body {
 
         #content {
             display: grid;
-            grid-template-columns: minmax(0, 11.45%) 1fr minmax(0,11.45%);
-            grid-template-rows:  3.3% 24.95% 6.4% 6.25% 1.17% 41.63% 1fr;
+            grid-template-columns: minmax(0, 11.45%) minmax(1110px, 100%) minmax(0,11.45%);
+            grid-template-rows:  3.3% 24.90% 6.4% 6.29% 1.17% 41.63% 1fr;
             height: 100%;
+            min-height: 1200px;
+            min-width: 1200px;
             position: relative;
             width: 100%;
 
@@ -91,6 +93,10 @@ html, body {
                     flex-direction: row; 
                     height: 100%;
                     justify-content: space-between;
+
+                    #mobile-menu, #mobile-x-menu {
+                        display: none;
+                    }
 
                     #header-logo {
                         margin-left: 0.20rem;
@@ -198,17 +204,16 @@ html, body {
                     padding-left: 1px;
                     padding-right: 51%;
                     position: relative;
-                }
-
-                #desktop-photo {
-                    bottom: 0%;
-                    grid-column: 1;
-                    grid-row: 1 / span 2;
-                    height: 86%;
-                    position: absolute;
-                    right: 0%;
-                    z-index: 1;
-                }
+    
+                    #desktop-photo {
+                        top: 17.6%;
+                        height: 108.2%;
+                        margin-right: 4.5%;
+                        position: absolute;
+                        right: 0%;
+                        z-index: 1;
+                    }
+               }
 
                 .heading {
                     line-height: 4.05rem;
@@ -382,6 +387,10 @@ html, body {
                         position: relative;
                         width: 100%;
 
+                        #mobile-banner-bg {
+                            display: none;
+                        }
+
                         .heading {
                             align-items: center;
                             color: $c-light-gray;
@@ -525,14 +534,17 @@ html, body {
                             color: $c-dark-gray-violet;
                             display: flex;
                             flex-direction: column;
-                            height: 30%;
                             justify-content: flex-end;
-                            margin-bottom: 1.25rem;
+                            margin-top: 3.0rem;
                         }
 
                         .menu-item {
                             cursor: pointer;
                             margin-top: 1.025rem;
+                        }
+
+                        .menu-header + .menu-item {
+                            margin-top: 2.3rem;
                         }
 
                         .menu-item:hover {
@@ -564,6 +576,10 @@ html, body {
                 background-color: $c-light-gray;
                 grid-column: 1;
                 grid-row: 7;
+
+                #mobile-footer-bg {
+                    display: none;
+                }
             }
 
             #right-box-footer {
@@ -575,7 +591,46 @@ html, body {
     }
 }
 
-@media (max-width: 1000px) {
+@media (min-width: 500px) and (max-height: 1600px) {
+    body {
+        #content {
+            #box-2 .heading {
+                font-size: 3.0rem;
+                line-height: 3rem;
+                margin-bottom: 2%;
+            }
+
+            #box-5 #banner-grid #banner .heading {
+                font-size: 3.0rem;
+                line-height: 3rem;
+            }
+        }
+    }
+}
+
+@media (min-width: 500px) and (max-height: 1350px) {
+    body {
+        #content {
+            #box-2 .heading {
+                font-size: 2.0rem;
+                line-height: 2rem;
+                margin-bottom: 2%;
+            }
+
+            #box-5 {
+                .heading {
+                    font-size: 3.0rem;
+                }
+
+                #banner-grid #banner .heading {
+                    font-size: 2.0rem;
+                    line-height: 2rem;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 499px) {
 
     body {
 
@@ -586,8 +641,9 @@ html, body {
         #content {
             display: grid;
             grid-template-columns: minmax(0, 5%) minmax(90%, 100%) minmax(0, 5%);
-            grid-template-rows:  2.10% 11.7% 17.55% 38.74% 1fr;
+            grid-template-rows:  2.08% 11.7% 17.55% 38.74% 1fr;
             height: 100%;
+            min-height: 3600px;
             min-width: 375px;
             position: relative;
             width: 100%;
@@ -602,6 +658,7 @@ html, body {
            
             #right-box-1 {
                 background-color: white;
+                display: none;
                 grid-column: 3;
                 grid-row: 1;
                 z-index: 4;
@@ -609,7 +666,8 @@ html, body {
 
             #box-1 {
                 background-color: white;
-                grid-column: 2;
+                grid-column: 1 / span 3;
+                grid-row: 1;
                 height: 100%;
                 width: 100%;
                 z-index: 4;
@@ -620,24 +678,119 @@ html, body {
                     flex-direction: row; 
                     height: 100%;
                     justify-content: space-between;
+                    position: relative;
 
                     #header-logo {
-                        margin-left: 0.20rem;
+                        margin-left: 1.20rem;
                     }
 
                     #header-menu-list {
+                        align-items: center;
+                        background-color: $c-dark-violet;
+                        background-image: url("images/bg-pattern-mobile-nav.svg");
+                        background-position: bottom;
+                        background-repeat: no-repeat;
+                        bottom: -733.0%;
                         display: none;
+                        flex-direction: column;
+                        font-size: 1.18rem;
+                        font-weight: $body-font-weight-heavy;
+                        height: 733.0%;
+                        left: 0%;
+                        letter-spacing: 0.10rem;
+                        position: absolute;
+                        text-transform: uppercase;
+                        width: 100%;
+
+                        .header-menu-item {
+                            color: $c-light-gray;
+                            cursor: pointer;
+                            display: flex;
+                            height: 10%;
+                        }
+
+                        .header-menu-item:first-child {
+                            margin-top: 13.2%;
+                        }
+                        .header-menu-item:nth-child(2) {
+                            margin-top: 1.6%;
+                        }
+
+                        .header-menu-item:nth-child(3) {
+                            height: 9.3%;
+                            margin-top: 1.2%;
+                        }
+
+                        .header-menu-button {
+                            align-items: center;
+                            background-color: $c-dark-gray-violet;
+                            border-color: $c-light-gray;
+                            border-style: solid;
+                            border-width: 1px;
+                            color: $c-light-gray;
+                            cursor: pointer;
+                            display: flex;
+                            height: 8.9%;
+                            justify-content: center;
+                            padding: 1px;
+                            width: 90%; 
+
+                            .header-menu-button-text {
+                                align-items: center;
+                                background-color: $c-dark-violet;
+                                display: flex;
+                                height: 100%;
+                                justify-content: center;
+                                margin-top: 2px;
+                                width: 100%;
+                            }
+                        }
+                        
+                        .header-menu-button:hover {
+                            background-color: $c-light-gray;
+                            color: $c-dark-violet;
+
+                            .header-menu-button-text {
+                                background-color: $c-light-gray;
+                            }
+                        }
+
+                        .header-menu-item:hover {
+                            text-decoration: underline;
+                        }
                     } 
+
+                    #mobile-menu {
+                        margin-right: 1.2rem;
+                    }
+
+                    #mobile-x-menu {
+                        display: none;
+                        margin-right: 1.2rem;
+                        margin-bottom: 0.2rem;
+                    }
 
                     #mobile-menu:hover {
                         background-color: $c-dark-violet;
-                        height: 38%;
-                        width: 9%;
+                        height: 40.5%;
+                        width: 8.5%;
+
+                        .menu-svg-lines {
+                            fill: $c-dark-violet;
+                            stroke: white;
+                        }
                     }
 
-                    #mobile-menu:hover .menu-svg-lines {
-                        fill: $c-dark-violet;
-                        stroke: white;
+                    #mobile-menu:focus {
+                        display: none;
+                    }
+
+                    #mobile-menu:focus + #mobile-x-menu {
+                        display: flex;
+                    }
+
+                    #mobile-menu:focus ~ #header-menu-list {
+                        display: flex;
                     }
                 } 
             
@@ -702,6 +855,7 @@ html, body {
                     background-image: url("images/image-intro-mobile.jpg");
                     background-repeat: no-repeat;
                     background-size: cover;
+                    display: grid;
                     grid-column: 1 / span 3;
                     grid-row: 1;
                     position: relative;
