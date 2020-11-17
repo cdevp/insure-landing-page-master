@@ -23,26 +23,31 @@ html .text, body .text {
 }
 
 @media (min-width: 500px) {
+  body {
+    background-color: #fafafa;
+  }
   body #content {
+    background-color: white;
     display: grid;
-    grid-template-columns: minmax(0, 11.45%) minmax(1110px, 100%) minmax(0, 11.45%);
-    grid-template-rows: 3.3% 24.9% 6.4% 6.29% 1.17% 41.63% 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 110px) minmax(1110px, 1900px) minmax(0, 110px) minmax(0, 1fr);
+    grid-template-rows: 3.3% minmax(24.9%, 601px) 6.4% 6.29% 1.17% minmax(41.63%, 1004px) 1fr;
     height: 100%;
     min-height: 2410px;
     min-width: 1440px;
+    max-height: 2500px;
     position: relative;
     width: 100%;
   }
   body #content #desktop-bg-left {
     align-self: end;
-    grid-column: 1;
+    grid-column: 2;
     grid-row: 2/span 4;
     height: 54%;
     position: relative;
     z-index: 2;
   }
   body #content #desktop-bg-right {
-    grid-column: 2;
+    grid-column: 3;
     grid-row: 2/span 2;
     height: 54%;
     position: absolute;
@@ -51,13 +56,13 @@ html .text, body .text {
   }
   body #content #right-box-1 {
     background-color: white;
-    grid-column: 3;
+    grid-column: 4;
     grid-row: 1;
     z-index: 4;
   }
   body #content #box-1 {
     background-color: white;
-    grid-column: 2;
+    grid-column: 3;
     height: 100%;
     width: 100%;
     z-index: 4;
@@ -122,19 +127,19 @@ html .text, body .text {
   }
   body #content #left-box-2 {
     background-color: #2d2640;
-    grid-column: 1;
+    grid-column: 1/span 2;
     grid-row: 2;
     max-height: 650px;
   }
   body #content #right-box-2 {
     background-color: #2d2640;
-    grid-column: 3;
+    grid-column: 4/span 2;
     grid-row: 2;
     max-height: 650px;
   }
   body #content #desktop-bg-right {
     height: 87%;
-    grid-column: 1/span 3;
+    grid-column: 2/span 3;
     grid-row: 1/span 2;
     position: absolute;
     right: 0%;
@@ -145,7 +150,7 @@ html .text, body .text {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 79.55% 1fr;
-    grid-column: 2;
+    grid-column: 3;
     grid-row: 2/span 2;
     position: relative;
   }
@@ -242,19 +247,19 @@ html .text, body .text {
     z-index: 1;
   }
   body #content #box-3 {
-    grid-column: 2;
+    grid-column: 3;
   }
   body #content #box-4 {
     border-top-color: #95a9c6;
     border-top-style: solid;
     border-top-width: 1px;
-    grid-column: 2;
+    grid-column: 3;
     width: 10%;
   }
   body #content #box-5 {
     display: flex;
     flex-direction: column;
-    grid-column: 2;
+    grid-column: 3;
   }
   body #content #box-5 .heading {
     align-items: flex-start;
@@ -387,7 +392,7 @@ html .text, body .text {
     background-color: #fafafa;
     display: flex;
     flex-direction: column;
-    grid-column: 2;
+    grid-column: 3;
     height: 100%;
     width: 100%;
   }
@@ -474,19 +479,26 @@ html .text, body .text {
   }
   body #content #box-7 {
     background-color: gray;
-    grid-column: 2;
+    grid-column: 3;
   }
   body #content #left-box-footer {
     background-color: #fafafa;
-    grid-column: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 110px;
+    grid-template-rows: 1fr;
+    grid-column: 1/span 2;
     grid-row: 7;
+  }
+  body #content #left-box-footer #footer-bg {
+    grid-column: 2;
+    grid-row: 1;
   }
   body #content #left-box-footer #mobile-footer-bg {
     display: none;
   }
   body #content #right-box-footer {
     background-color: #fafafa;
-    grid-column: 3;
+    grid-column: 4/span 2;
     grid-row: 7;
   }
 }
